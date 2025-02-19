@@ -1,0 +1,29 @@
+[project]
+dynamic = ["version"]
+name = "py2html"
+dependencies = []
+requires-python = ">= 3.8"
+description = "Create HTML files from python"
+authors = [{name = "Felipe Ruhland", email = "dev@feliperuhland.com"}]
+maintainers = [{name = "Felipe Ruhland", email = "dev@feliperuhland.com"}]
+readme = "README.md"
+license = {file = "LICENSE"}
+
+[project.urls]
+Homepage = "https://py2all.com/py2html"
+Repository = "https://github.com/feliperuhland/py2all/py2html/"
+
+[project.optional-dependencies]
+tests = [
+  "pytest",
+]
+
+[tool.pytest.ini_options]
+addopts = "-ra -v"
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
