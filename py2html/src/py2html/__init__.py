@@ -1,4 +1,7 @@
-from typing import Self
+from typing import TypeVar
+
+Self = TypeVar("Self", bound="Tag")
+
 
 
 class Tag:
