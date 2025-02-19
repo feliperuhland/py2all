@@ -1,11 +1,11 @@
-from typing import TypeVar
+from typing import TypeVar, Union
 
 Self = TypeVar("Self", bound="Tag")
 
 
 
 class Tag:
-    def __init__(self, name: str, inner_data: Self | str | None = None, self_closing_tag: bool = False, **attrs) -> None:
+    def __init__(self, name: str, inner_data: Union[Self, str, None] = None, self_closing_tag: bool = False, **attrs) -> None:
         self.name = name
         self.inner_data = inner_data
         self.self_closing_tag = self_closing_tag
