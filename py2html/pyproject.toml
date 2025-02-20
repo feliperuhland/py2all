@@ -17,10 +17,11 @@ Repository = "https://github.com/feliperuhland/py2all/py2html/"
 tests = [
   "pytest",
   "pytest-black",
+  "pytest-mypy",
 ]
 
 [tool.pytest.ini_options]
-addopts = "-ra -v --black"
+addopts = "-ra -v --black --mypy"
 testpaths = ["tests"]
 pythonpath = ["src"]
 
