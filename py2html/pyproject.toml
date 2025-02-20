@@ -18,15 +18,19 @@ tests = [
   "pytest",
   "pytest-black",
   "pytest-mypy",
+  "pytest-cov",
 ]
 
 [tool.pytest.ini_options]
-addopts = "-ra -v --black --mypy"
+addopts = "-ra -v --black --mypy --cov=py2html --cov-report html --cov-report term"
 testpaths = ["tests"]
 pythonpath = ["src"]
 
 [tool.black]
 line-length = 99
+
+[tool.coverage.report]
+fail_under = 90
 
 [build-system]
 requires = ["setuptools >= 61.0"]
