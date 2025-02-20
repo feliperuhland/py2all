@@ -16,12 +16,16 @@ Repository = "https://github.com/feliperuhland/py2all/py2html/"
 [project.optional-dependencies]
 tests = [
   "pytest",
+  "pytest-black",
 ]
 
 [tool.pytest.ini_options]
-addopts = "-ra -v"
+addopts = "-ra -v --black"
 testpaths = ["tests"]
 pythonpath = ["src"]
+
+[tool.black]
+line-length = 99
 
 [build-system]
 requires = ["setuptools >= 61.0"]
