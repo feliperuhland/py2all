@@ -65,8 +65,41 @@ class H1(TagModel):
     tag_name = "h1"
 
 
+class A(TagModel):
+    tag_name = "a"
+
+
+class B(TagModel):
+    tag_name = "b"
+
+
+class I(TagModel):
+    tag_name = "i"
+
+
 class P(TagModel):
     tag_name = "p"
+
+
+class Link(TagModel):
+    tag_name = "link"
+    self_closing = True
+
+
+class Style(TagModel):
+    tag_name = "style"
+
+
+class Div(TagModel):
+    tag_name = "div"
+
+
+class Svg(TagModel):
+    tag_name = "svg"
+
+
+class Use(TagModel):
+    tag_name = "use"
 
 
 class Document:
