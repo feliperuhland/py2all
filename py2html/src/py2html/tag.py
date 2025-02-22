@@ -1,4 +1,4 @@
-from typing import TypeVar, Union
+from typing import TypeVar, Optional
 
 
 Self = TypeVar("Self", bound="TagModel")
@@ -8,10 +8,12 @@ class TagModel:
     tag_name = ""
     self_closing = False
 
-    def __init__(self, text: Union[str, None] = None, **attrs) -> None:
+    def __init__(
+        self, text: Optional[str] = None, children: Optional[list[Self]] = None, **attrs
+    ) -> None:
         self.text = text or ""
         self.attrs = attrs
-        self.children: list = []
+        self.children: list = children or []
 
     def build_attrs(self):
         attrs = ""
@@ -53,3 +55,26 @@ class Head(TagModel):
 
 class Title(TagModel):
     tag_name = "title"
+
+
+class Body(TagModel):
+    tag_name = "body"
+
+
+class H1(TagModel):
+    tag_name = "h1"
+
+
+class P(TagModel):
+    tag_name = "p"
+
+
+class Document:
+    def __init__(self, children: Optional[list[TagModel]] = None) -> None:
+        self.children = children or []
+
+    def add_child(self, child: TagModel) -> None:
+        self.children.append(child)
+
+    def render(self) -> str:
+        return "".join([child.render() for child in self.children])
