@@ -65,6 +65,26 @@ class H1(TagModel):
     tag_name = "h1"
 
 
+class H2(TagModel):
+    tag_name = "h2"
+
+
+class H3(TagModel):
+    tag_name = "h3"
+
+
+class H4(TagModel):
+    tag_name = "h4"
+
+
+class H5(TagModel):
+    tag_name = "h5"
+
+
+class H6(TagModel):
+    tag_name = "h6"
+
+
 class A(TagModel):
     tag_name = "a"
 
