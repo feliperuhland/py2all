@@ -1,7 +1,4 @@
-from typing import TypeVar, Optional
-
-
-Self = TypeVar("Self", bound="TagModel")
+from typing import Optional
 
 
 class TagModel:
@@ -9,7 +6,7 @@ class TagModel:
     self_closing = False
 
     def __init__(
-        self, text: Optional[str] = None, children: Optional[list[Self]] = None, **attrs
+        self, text: Optional[str] = None, children: Optional[list["TagModel"]] = None, **attrs
     ) -> None:
         self.text = text or ""
         self.attrs = attrs
@@ -36,7 +33,7 @@ class TagModel:
         attrs = self.build_attrs()
         return f"<{self.tag_name}{' 'if attrs else ''}{attrs}>"
 
-    def add_child(self, child: Self) -> None:
+    def add_child(self, child: "TagModel") -> None:
         self.children.append(child)
 
 
