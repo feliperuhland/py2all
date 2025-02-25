@@ -1,0 +1,5 @@
+site_name: Py2All
+nav:
+  - py2all: index.md
+  - py2html: py2html/index.md
+theme: readthedocs
